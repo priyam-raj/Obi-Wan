@@ -1,0 +1,23 @@
+{
+  "name": "obi-wan",
+  "version": "1.0.0",
+  "description": "A Discord bot that that welcome and farewell users.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "url": "https://github.com/priyam-raj/Obi-Wan"
+  },
+  "license": "MIT",
+  "keywords": [
+    "discord-js",
+    "bot",
+    "obiwan"
+  ],
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "moment": "^2.29.1",
+    "old-wio.db": "^4.0.10"
+  }
+}
