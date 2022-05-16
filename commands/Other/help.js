@@ -33,7 +33,7 @@ module.exports.help = {
             thumbnail: { url: client.user.displayAvatarURL({ format: "jpg" }) },
             description: `Followed by **#help**, type any of the following commands for more details:\n\nThe current prefix is **'${Prefix}'** 
             \n\n**Config**\n${Config}\n\n**More**\n${Other}\n\n
-            \Invite Obi-Wan - [Click Here](https://discord.com/oauth2/authorize?client_id=${
+            \[Invite Obi-Wan](https://discord.com/oauth2/authorize?client_id=${
               client.user.id
             }&scope=bot&permissions=2048)`,
           },
