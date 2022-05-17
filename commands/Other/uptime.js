@@ -1,8 +1,7 @@
 module.exports.help = {
   name: "uptime",
-  aliases: ["upt"],
   category: "Other",
-  description: "Shows how long has the Obi-Wan Bot has been running for",
+  description: "Shows how long has the Obi-Wan Bot has been running for.",
   usage: "Uptime",
   run: ({ client, message, Color }) => {
     function getUptime(days, hours, minutes, seconds) {
@@ -22,8 +21,6 @@ module.exports.help = {
             Math.floor(client.uptime / 60000) % 60,
             Math.floor(client.uptime / 1000) % 60
           ),
-          footer: { text: `${message.author.username}` },
-          timestamp: new Date(),
         },
       ],
     });

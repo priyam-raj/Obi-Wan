@@ -2,7 +2,6 @@ const db = require("old-wio.db");
 
 module.exports.help = {
   name: "help",
-  aliases: ["h"],
   category: "Other",
   description: "Shows the commands of Obi-Wan.",
   usage: "Help | <Command Name>",
@@ -33,9 +32,7 @@ module.exports.help = {
             thumbnail: { url: client.user.displayAvatarURL({ format: "jpg" }) },
             description: `Followed by **#help**, type any of the following commands for more details:\n\nThe current prefix is **'${Prefix}'** 
             \n\n**Config**\n${Config}\n\n**More**\n${Other}\n\n
-            \[Invite Obi-Wan](https://discord.com/oauth2/authorize?client_id=${
-              client.user.id
-            }&scope=bot&permissions=2048)`,
+            \[Invite Obi-Wan](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2048)`,
           },
         ],
       });
@@ -46,7 +43,7 @@ module.exports.help = {
 
     if (!command)
       return message.channel.send({
-        content: `No command found - ${
+        content: `Command not found ${
           args[0].charAt(0).toUpperCase() + args[0].slice(1)
         }`,
       });
@@ -55,7 +52,7 @@ module.exports.help = {
       embeds: [
         {
           color: Color || "RANDOM",
-          title: "Command information",
+          title: "Command details",
           thumbnail: { url: client.user.displayAvatarURL({ format: "jpg" }) },
           fields: [
             {
@@ -63,32 +60,23 @@ module.exports.help = {
               value:
                 command.help.name.charAt(0).toUpperCase() +
                 command.help.name.slice(1),
-              inline: true,
             },
-            {
-              name: "Category",
-              value: command.help.category,
-              inline: true,
-            },
-            {
-              name: "Aliases",
-              value: command.help.aliases
-                ? command.help.aliases.join(", ")
-                : "No Aliases",
-              inline: true,
-            },
+
+            // {
+            //   name: "Aliases",
+            //   value: command.help.aliases
+            //     ? command.help.aliases.join(", ")
+            //     : "No Aliases",
+            // },
             {
               name: "Usage",
               value: command.help.usage,
-              inline: true,
             },
             {
               name: "Description",
               value: command.help.description,
             },
           ],
-          footer: { text: `${message.author.username}` },
-          timestamp: new Date(),
         },
       ],
     });

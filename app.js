@@ -26,10 +26,7 @@ for (const category of categories) {
       if (!file.endsWith(".js"))
         return console.info(`${file}: does not ends with .js!`);
       const command = require(`./commands/${category}/${file}`);
-      if (!command.help || !command.help.name)
-        return console.info(
-          `${file}: Does not have command.help or command.help.name`
-        );
+  
       client.commands.set(command.help.name, command);
       command.help.aliases
         ? command.help.aliases.forEach((alias) =>
@@ -63,10 +60,14 @@ client.on("messageCreate", async (message) => {
       Default_Prefix,
       Support,
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     console.log(error);
-    return message.channel.send("Something went wrong, try again later.");
+    return message.channel.send("Something went wrong.");
   }
+
+
 });
 
 client.on("guildMemberAdd", async (member) => {
@@ -76,9 +77,7 @@ client.on("guildMemberAdd", async (member) => {
     (await db.fetch(`WM-${member.guild.id}`)) ||
     `<a:obihellothere:975695669815832616> Hello there, <@${member.user.id}>.`
   )
-    .replace(/<servername>/g, member.guild.name)
-    .replace(/<membername>/g, member.user.username)
-    .replace(/<membermention>/g, `<@${member.user.id}>`);
+
 
   if (member.user.username.length > 25)
     member.user.username = member.user.username.slice(0, 25) + "...";
@@ -98,9 +97,7 @@ client.on("guildMemberRemove", async (member) => {
     (await db.fetch(`GM-${member.guild.id}`)) ||
     `<a:obigoodbye:975695669400596481> Farewell friend, ${member.user.username}.`
   )
-    .replace(/<servername>/g, member.guild.name)
-    .replace(/<membername>/g, member.user.username)
-    .replace(/<membermention>/g, `<@${member.user.id}>`);
+
 
   if (member.user.username.length > 25)
     member.user.username = member.user.username.slice(0, 25) + "...";

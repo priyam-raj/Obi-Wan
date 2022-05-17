@@ -1,7 +1,7 @@
 const db = require("old-wio.db");
 
 module.exports.help = {
-  name: "setchannel",
+  name: "channelset",
   aliases: ["sethellothere"],
   category: "Config",
   description: "Set the welcome or the goodbye channel.",
@@ -19,15 +19,15 @@ module.exports.help = {
     if (!mentionedChannel || mentionedChannel.type === "voice")
       return message.channel.send(`Please enter a valid text channel!`);
 
-    const Welcome = ["welcome", "wel", "join"],
-      Goodbye = ["goodbye", "leave", "left"];
+    const Welcome = ["hellothere", "welcome", "join"],
+      Goodbye = ["farewell", "goodbye", "left"];
 
     if (
       !args[1] ||
       ![...Welcome, ...Goodbye].find((T) => T === args[1].toLowerCase())
     )
       return message.channel.send(
-        `Please enter a valid type - ${[...Welcome, Goodbye].join(", ")}`
+        `Please enter a valid type ${[...Welcome, Goodbye].join(", ")}`
       );
 
     const Current = Welcome.some((wel) => wel === args[1].toLowerCase())
@@ -44,7 +44,7 @@ module.exports.help = {
         {
           color: Color || "RANDOM",
           title: "Success",
-          description: `${Current} channel has now been set - <#${mentionedChannel.id}>`,
+          description: `${Current} channel has now been set at <#${mentionedChannel.id}>.`,
           footer: { text: `${message.author.username}` },
           timestamp: new Date(),
         },
