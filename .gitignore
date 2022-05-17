@@ -5,3 +5,4 @@ package-lock.json
 dir_to_ignore/node_modules
 config.js
 config.js
+config.js
