@@ -8,6 +8,4 @@ You can invite this Discord bot [here]( https://discord.com/oauth2/authorize?cli
 
 &nbsp;
 
-&nbsp;
-
-Obi-Wan Kenobi character or any other Star Wars dialogues, references or graphics are the property of Lucasfilm Ltd. This is just a free and fun project made for non-commercial purposes, no copyright infringement intended.
+<sub>Obi-Wan Kenobi character or any other Star Wars dialogues, references or graphics are the property of Lucasfilm Ltd. This is just a free and fun project made for non-commercial purposes, no copyright infringement intended.</sub>
