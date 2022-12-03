@@ -4,9 +4,14 @@ const { Client, Collection } = require("discord.js"),
 const client = new Client({
   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"],
 });
+
+const dotenv = require('dotenv');
+dotenv.config();
+
+const Token = process.env.TOKEN;
+
 const {
   Default_Prefix,
-  Token,
   Support,
   Color,
 } = require("./config.js");
